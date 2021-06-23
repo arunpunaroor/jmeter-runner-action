@@ -1,0 +1,63 @@
+---
+name: jmeter-runner-action
+description: Runs an Apache JMeter load test case. Included with plugins
+author: QA-Performance-Engineering <QA-Performance-Engineering@betssongroup.com>
+
+inputs:
+  testFilePath:
+    description: The path to the JMX test file
+    required: true
+  outputReportsFolder:
+    description: The folder where the JMeter reports will be published
+    required: false
+    default: reports/
+  args:
+    required: false
+    description: |
+      Optional arguments that are passed to the JMeter tool
+
+      Options:
+        -p, --propfile <argument>
+        -q, --addprop <argument>
+        -i, --jmeterlogconf <argument>
+        -j, --jmeterlogfile <argument>
+        -s, --server
+        -E, --proxyScheme <argument>
+        -H, --proxyHost <argument>
+        -P, --proxyPort <argument>
+        -N, --nonProxyHosts<argument>
+        -u, --username <argument>
+        -a, --password <argument>
+        -J, --jmeterproperty <argument>=<value>
+        -G, --globalproperty <argument>=<value>
+        -D, --systemproperty <argument>=<value>
+        -S, --systemPropertyFile <argument>
+        -f, --forceDeleteResultFile
+        -L, --loglevel <argument>=<value>
+        -r, --runremote
+        -R, --remotestart <argument>
+        -d, --homedir <argument>
+        -X, --remoteexit
+        -g, --reportonly <argument>
+
+# Run JMeter in headless mode.
+## Produce reports in the specified folders.
+## Can provide additional arguments via inputs.args
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "-n"
+    - "-t"
+    - "${{ inputs.testFilePath }}"
+    - "-l"
+    - "jmeter_log.log"
+    - "-e"
+    - "-f"
+    - "-o"
+    - "${{ inputs.outputReportsFolder }}"
+    - "${{ inputs.args }}"
+
+branding:
+  color: gray-dark
+  icon: arrow-up
