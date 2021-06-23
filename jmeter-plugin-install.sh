@@ -18,3 +18,4 @@ chmod a+x ${JMETER_HOME}/bin/*.sh
 
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-casutg
+${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-tst
