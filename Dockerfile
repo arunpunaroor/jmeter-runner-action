@@ -21,7 +21,7 @@ RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
     rm -rf ${JMETER_HOME}/docs && rm -rf ${JMETER_HOME}/printable_docs \
     rm -rf /var/cache/apk/* && \
     chmod a+x /entrypoint.sh
-	chmod a+x /jmeter-plugin-install.sh
+    chmod a+x /jmeter-plugin-install.sh
 
 
 RUN /jmeter-plugin-install.sh
