@@ -4,7 +4,7 @@ LABEL "maintainer" "Central QA"
 LABEL "com.github.actions.name"="jmeter-runner-action"
 LABEL "com.github.actions.description"="Run Apache JMeter Performance Tests, included with plugins"
 
-ENV JMETER_VERSION "5.4.1"
+ENV JMETER_VERSION "5.0"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
 ENV JMETER_BIN "${JMETER_HOME}/bin"
 ENV PATH "$PATH:$JMETER_BIN"
