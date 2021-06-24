@@ -17,5 +17,10 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
+echo "Downloading concurrency"
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-casutg
+echo "Downloading tst"
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-tst
+echo "List all files in ext"
+ls ${JMETER_HOME}/lib/ext
+chmod a+x ${JMETER_HOME}/lib/ext/*.jar
