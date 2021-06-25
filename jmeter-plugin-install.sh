@@ -11,16 +11,9 @@ curl -L https://jmeter-plugins.org/get/ --output ${JMETER_HOME}/lib/ext/jmeter-p
 
 java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
 
-#cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
-#java -jar ${JMETER_HOME}/lib/cmdrunner-2.2.jar --tool org.jmeterplugins.repository.PluginManagerCMD %*
-
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
-echo "Downloading concurrency"
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-casutg
-echo "Downloading tst"
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-tst
-echo "List all files in ext"
-ls ${JMETER_HOME}/lib/ext
 chmod a+x ${JMETER_HOME}/lib/ext/*.jar
