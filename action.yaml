@@ -56,5 +56,5 @@ runs:
     - "${{ inputs.args }}"
 
 branding:
-  color: gray-dark
-  icon: arrow-up
+  color: blue
+  icon: zap
