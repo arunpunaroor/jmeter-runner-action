@@ -2,7 +2,7 @@ FROM alpine:3.12.1
 
 LABEL "maintainer" "Central QA"
 LABEL "com.github.actions.name"="jmeter-runner-action"
-LABEL "com.github.actions.description"="Run Apache JMeter Performance Tests, included with plugins"
+LABEL "com.github.actions.description"="Github action for running a load test using Jmeter. Included with plugins:- concurrency thread, throughput shaping timer"
 
 ENV JMETER_VERSION "5.4.1"
 ENV JMETER_HOME "/opt/apache/apache-jmeter-${JMETER_VERSION}"
